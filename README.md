@@ -1,3 +1,13 @@
+# Tarea 2 Sistemas Distribuidos
+|Nombre| Rol|
+|-----|-----|
+|Eduardo Borgoño| 201373525-8 |    
+|Francisca Ramírez| 201373607-6 |
+
+[Avión](https://github.com/eduborgono/distribuidos-avion) 
+
+[Torre de control](https://github.com/eduborgono/torreControl)
+
 # Requerimientos
 
 Tener instalado java development kit con una versión mayor a 8.
