@@ -8,7 +8,21 @@ Clonar el repositorio
 git clone https://github.com/eduborgono/pantalla-informacion.git
 ```
 
-> Para **Linux** se deben cambiar los permisos de ejecución del archivo gradlew
+### Linux
 ```
 sudo chmod +x gradlew
+./gradlew
+./gradlew assemble
+java -jar build/libs/pantalla-informacion-all.jar 
 ```
+
+###Windows (__Windows PowerShell__)
+```
+.\gradlew.bat
+.\gradlew.bat assemble
+java -jar .\build\libs\pantalla-informacion-all.jar
+```
+
+
+
+
