@@ -16,7 +16,7 @@ sudo chmod +x gradlew
 java -jar build/libs/pantalla-informacion-all.jar 
 ```
 
-###Windows (__Windows PowerShell__)
+### Windows (__Windows PowerShell__)
 ```
 .\gradlew.bat
 .\gradlew.bat assemble
