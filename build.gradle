@@ -1,0 +1,60 @@
+buildscript {
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.5'
+    classpath "com.github.jengelman.gradle.plugins:shadow:4.0.2"
+  }
+}
+
+plugins {
+    
+    id 'java'
+    id 'application'
+}
+
+apply plugin: 'com.google.protobuf'
+apply plugin: "com.github.johnrengelman.shadow"
+
+
+mainClassName = 'com.distribuidos.tarea2.Pantalla'
+
+run {
+  standardInput = System.in
+}
+
+sourceSets.main.java {
+    srcDirs "$buildDir/generated/source/proto/main/grpc"
+    srcDirs "$buildDir/generated/source/proto/main/java"
+}
+
+dependencies {
+    compile 'com.google.guava:guava:23.0'
+    compile 'io.grpc:grpc-netty-shaded:1.16.1'
+    compile 'io.grpc:grpc-protobuf:1.16.1'
+    compile 'io.grpc:grpc-stub:1.16.1'
+    compile 'org.slf4j:slf4j-nop:1.7.25' 
+    compile 'de.vandermeer:asciitable:0.3.2'
+}
+
+
+repositories {
+    mavenCentral()
+}
+
+protobuf {
+  protoc {
+    artifact = "com.google.protobuf:protoc:3.5.1-1"
+  }
+  plugins {
+    grpc {
+      artifact = 'io.grpc:protoc-gen-grpc-java:1.16.1'
+    }
+  }
+  generateProtoTasks {
+    all()*.plugins {
+      grpc {}
+    }
+  }
+}
